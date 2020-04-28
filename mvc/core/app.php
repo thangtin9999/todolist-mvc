@@ -1,8 +1,8 @@
 <?php
 class app
 {
-    protected $controller = "home";
-    protected $action = '';
+    protected $controller = "task";
+    protected $action = 'sayhi';
     protected $params = [];
     function __construct()
     {
@@ -13,6 +13,7 @@ class app
             unset($arr[0]);
         }
         require_once "./mvc/controllers/" . $this->controller . ".php";
+        $this->controller = new $this->controller;
         // Xử lý Action
         if (isset($arr[1])) {
             if (method_exists($this->controller, $arr[1])) {

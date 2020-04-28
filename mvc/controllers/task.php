@@ -1,15 +1,32 @@
 <?php
-class task
+class task extends controller
 {
-
+    function sayhi()
+    {
+        $teo = $this->model("taskmodel");
+        echo $teo->gettask();
+    }
     function creat($content, $category)
     {
         echo $content . " " . $category;
     }
-    function read()
+
+
+
+    function read($content, $category)
     {
-        echo "read task";
+        //Model
+        $teo = $this->model("taskmodel");
+        $tong = $teo->tong($content, $category);
+        //view
+        $this->view("masterlayout", [
+            "page" => "task",
+            "Number" => $tong,
+            "alltask" => ["content", $tong]
+        ]);
     }
+
+
     function update()
     {
         echo "update task";
