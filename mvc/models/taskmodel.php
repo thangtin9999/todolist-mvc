@@ -1,5 +1,5 @@
 <?php
-class taskmodel
+class taskmodel extends db
 {
     public function gettask()
     {
@@ -8,5 +8,10 @@ class taskmodel
     public function tong($n, $m)
     {
         return $n + $m;
+    }
+    public function task()
+    {
+        $qr = "SELECT * FROM task";
+        return mysqli_query($this->conn, $qr);
     }
 }

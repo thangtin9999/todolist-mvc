@@ -22,7 +22,8 @@ class task extends controller
         $this->view("masterlayout", [
             "page" => "task",
             "Number" => $tong,
-            "alltask" => ["content", $tong]
+            "alltask" => ["content", $tong],
+            "SV" => $teo->task()
         ]);
     }
 
