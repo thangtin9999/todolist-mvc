@@ -6,28 +6,21 @@ class task extends controller
         $teo = $this->model("taskmodel");
         echo $teo->gettask();
     }
-    function creat($content, $category)
+    function create($content)
     {
-        echo $content . " " . $category;
+        $add = $this->model("taskmodel");
+        $add->add_task($content);
     }
-
-
-
-    function read($content, $category)
+    function read()
     {
         //Model
-        $teo = $this->model("taskmodel");
-        $tong = $teo->tong($content, $category);
+        $read = $this->model("taskmodel");
         //view
         $this->view("masterlayout", [
             "page" => "task",
-            "Number" => $tong,
-            "alltask" => ["content", $tong],
-            "SV" => $teo->task()
+            "SV" => $read->task()
         ]);
     }
-
-
     function update()
     {
         echo "update task";

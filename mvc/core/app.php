@@ -2,9 +2,9 @@
 class app
 {
     protected $controller = "task";
-    protected $action = 'sayhi';
+    protected $action = 'read';
     protected $params = [];
-    function __construct()
+    function app()
     {
         $arr = $this->urlprocess();
         // Xử lý Controller
