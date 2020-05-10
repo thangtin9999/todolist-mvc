@@ -1,11 +1,17 @@
 <h2 class="mb-4">Task</h2>
-<h3>
+<div class="task">
     <?php
-    // echo $data["alltask"][0] . " " . $data["alltask"][1];
+    $rows = json_decode($data['tasks'], true);
+    foreach ($rows as $key => $row) {
     ?>
-</h3>
-<?php
-while ($row = mysqli_fetch_array($data['SV'])) {
-    echo $row['content'] . "|" . $row['category'] . "|" . $row['status'] . "<hr/>";
-}
-?>
+    <input id="task-item" type="checkbox" class="task-item">
+    <label for="">
+        <span class="label-text" id="">
+            <?php echo $row['content'];
+                ?></span>
+    </label>
+    <hr />
+    <?php
+    }
+    ?>
+</div>

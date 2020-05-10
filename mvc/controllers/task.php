@@ -1,24 +1,37 @@
 <?php
 class task extends controller
 {
+    public $task;
+    function task()
+    {
+        $this->task = $this->model("taskmodel");
+    }
     function sayhi()
     {
         $teo = $this->model("taskmodel");
         echo $teo->gettask();
     }
-    function create($content)
+    function create()
     {
-        $add = $this->model("taskmodel");
-        $add->add_task($content);
+        //Get Data
+        if (isset($_POST['btn_addtask'])) {
+            $content = $_POST['add_content'];
+        }
+        // Insert Data
+        $this->task->add_task($content);
+        // View
+        $this->view("masterlayout", [
+            "page" => "task",
+            "tasks" => $this->task->show_task()
+        ]);
     }
     function read()
     {
         //Model
-        $read = $this->model("taskmodel");
         //view
         $this->view("masterlayout", [
             "page" => "task",
-            "SV" => $read->task()
+            "tasks" => $this->task->show_task()
         ]);
     }
     function update()

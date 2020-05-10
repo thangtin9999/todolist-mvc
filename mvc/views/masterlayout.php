@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="http://localhost/todo/public/css/style.css">
     <link rel="stylesheet" type="text/css" href="http://localhost/todo/public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/todo/public/css/style-new.css">
+
 </head>
 
 <body>
@@ -45,14 +47,14 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5">
             <div class="s003">
-                <form>
+                <form action="./task/create" method="POST">
                     <div class="inner-form">
                         <div class="input-field second-wrap">
-                            <input id="search" type="text" placeholder="Enter Task...." />
+                            <input id="search" type="text" name="add_content" placeholder="Enter Task...." />
                         </div>
                         <div class="input-field third-wrap">
-                            <button class="btn-search" type="button">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            <button class="btn-search" name="btn_addtask" type="submit">
+                                <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>

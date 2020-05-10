@@ -1,0 +1,12 @@
+#task-item {
+  margin-right: 18px;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 3px;
+}
+#task {
+}
+label {
+  padding-bottom: 0px;
+}
