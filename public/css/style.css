@@ -48,6 +48,7 @@
 /* Custom css */
 hr{
   color:gray;
+  margin:0px;
 }
 html {
   font-family: sans-serif;

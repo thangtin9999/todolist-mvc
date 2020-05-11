@@ -6,10 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/todo/public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/todo/public/css/main.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/todo/public/css/style-new.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/style-new.css">
 
 </head>
 
@@ -68,11 +70,12 @@
         </div>
     </div>
 
-    <script src="http://localhost/todo/public/js/jquery.min.js"></script>
-    <script src="http://localhost/todo/public/js/popper.js"></script>
-    <script src="http://localhost/todo/public/js/bootstrap.min.js"></script>
-    <script src="http://localhost/todo/public/js/main.js"></script>
-    <script src="http://localhost/todo/public/js/choices.js"></script>
+    <script src="./public/js/jquery.min.js"></script>
+    <script src="./public/js/popper.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
+    <script src="./public/js/main.js"></script>
+    <script src="./public/js/choices.js"></script>
+    <script src="./public/js/test.js"></script>
 </body>
 
 </html>

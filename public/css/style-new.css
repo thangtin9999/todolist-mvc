@@ -1,12 +1,35 @@
-#task-item {
-  margin-right: 18px;
-  width: 18px;
-  height: 18px;
-  position: relative;
-  top: 3px;
+.custom-control-label::before {
+  width: 1.3rem;
+  height: 1.3rem;
+  top: 0.5rem;
 }
-#task {
+.custom-control-label::after {
+  width: 1.3rem;
+  height: 1.3rem;
+  top: 0.5rem;
 }
+span.label-text {
+  margin-left: 1rem;
+}
+
 label {
   padding-bottom: 0px;
+}
+hr {
+  margin: 0.5rem;
+}
+.badge {
+  margin-top: 0.5rem;
+}
+button#edit {
+  width: 1.7rem;
+  height: 1.5rem;
+  padding: 0;
+  background-color: #63c76a;
+  border-color: #63c76a;
+}
+button#delete {
+  width: 1.7rem;
+  height: 1.5rem;
+  padding: 0;
 }

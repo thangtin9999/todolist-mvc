@@ -18,12 +18,11 @@ class task extends controller
             $content = $_POST['add_content'];
         }
         // Insert Data
-        $this->task->add_task($content);
+        if (!empty($content)) {
+            $this->task->add_task($content);
+        }
         // View
-        $this->view("masterlayout", [
-            "page" => "task",
-            "tasks" => $this->task->show_task()
-        ]);
+        header("Location:../");
     }
     function read()
     {
