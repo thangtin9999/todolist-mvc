@@ -62,7 +62,7 @@
                     </div>
                 </form>
             </div>
-            <div>
+            <div id="result">
                 <?php
                 require_once "./mvc/views/pages/" . $data["page"] . ".php";
                 ?>
@@ -70,12 +70,11 @@
         </div>
     </div>
 
-    <script src="./public/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./public/js/popper.js"></script>
     <script src="./public/js/bootstrap.min.js"></script>
     <script src="./public/js/main.js"></script>
     <script src="./public/js/choices.js"></script>
-    <script src="./public/js/test.js"></script>
 </body>
 
 </html>

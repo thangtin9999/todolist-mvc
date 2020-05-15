@@ -33,12 +33,22 @@ class task extends controller
             "tasks" => $this->task->show_task()
         ]);
     }
+    function modal_edit()
+    {
+        $id = $_POST['id'];
+        $content = $this->task->get_content($id);
+        echo $content;
+    }
     function update()
     {
-        echo "update task";
+        $id = $_POST['id'];
+        $content = $_POST['content'];
+        $this->task->update($id, $content);
+        echo "Success";
     }
     function delete()
     {
-        echo "delete task";
+        $id_del = $_POST['id'];
+        $this->task->delete_task($id_del);
     }
 }

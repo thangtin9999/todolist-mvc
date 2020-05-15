@@ -21,6 +21,31 @@ class taskmodel extends db
         }
         return json_encode($result);
     }
+    // Delete Task
+    public function delete_task($id)
+    {
+        $qr = "DELETE FROM task WHERE id='$id'";
+        mysqli_query($this->conn, $qr);
+    }
+
+    // Edit Task - Get Content
+    public function get_content($id)
+    {
+        $qr = "SELECT content FROM task WHERE id ='$id'";
+        if (mysqli_query($this->conn, $qr)) {
+            $content = mysqli_query($this->conn, $qr);
+            $row = $content->fetch_assoc();
+        }
+        return $row['content'];
+    }
+
+
+    public function update($id, $content)
+    {
+        $qr = "UPDATE task SET content='$content', updatedate=now() WHERE id=$id";
+        mysqli_query($this->conn, $qr);
+    }
+
     public function check_task($content)
     {
         $qr = "SELECT id FROM task
