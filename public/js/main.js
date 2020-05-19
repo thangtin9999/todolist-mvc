@@ -14,12 +14,18 @@
   });
 })(jQuery);
 
-//Delete Task
-
+//Delete Task - Ok
+// Hiện tại e phải redirect lại. E muốn nó trả về view ngay luôn chứ không load
 $("button#delete").click(function () {
   var id_del = $(this).val();
-  $.post("./task/delete", { id: id_del }, function Redirect() {
-    window.location = "./";
+  _this = $("#div-task-"+id_del+"");
+  $.post("./task/delete", { id: id_del }, function (data) {
+    //$("#result").html(data);
+    // neu delete thanh cong => remove row tren view la du
+    _this.remove();
+  }).fail(function (res) {
+    console.log(res);
+    alert("Cannot delete!");
   });
 });
 //Edit task

@@ -4,7 +4,7 @@
     $rows = json_decode($data['tasks'], true);
     foreach ($rows as $key => $row) {
     ?>
-    <div class="custom-control custom-checkbox">
+    <div class="custom-control custom-checkbox" id="div-task-<?php echo $row['id']; ?>">
         <input id="customCheck<?php echo $row['id']; ?> " type="checkbox" class="custom-control-input">
         <label class="custom-control-label" for="customCheck<?php echo $row['id']; ?> ">
             <span class="label-text" id="">

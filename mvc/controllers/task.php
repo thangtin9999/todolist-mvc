@@ -49,6 +49,24 @@ class task extends controller
     function delete()
     {
         $id_del = $_POST['id'];
-        $this->task->delete_task($id_del);
+        // try: thu delete xem co duoc ko
+        try {
+            $this->task->delete_task($id_del);
+            // neu delete duoc thi httpcode 200, message success
+            //header("HTTP/1.1 200"); => 200 thi ko can cung duoc, vi default la http code 200
+            echo "success";
+        } catch (\Exception $e) {
+            header("HTTP/1.1 400");
+            echo "fail";
+        }
+
+        //view
+        // $this->view("masterlayout", [
+        //     "page" => "task",
+        //     "tasks" => $this->task->show_task()
+        // ]);
+        // neu delete thanh cong thi server chi return: success/http code 200
+        // neu delete KO thanh cong thi server return: fail/http code 404
+
     }
 }

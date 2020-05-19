@@ -24,8 +24,14 @@ class taskmodel extends db
     // Delete Task
     public function delete_task($id)
     {
+        // cho nay thieu kiem tra id co delete duoc hay ko ne
+        // id 94 da xoa khoi db roi ma van con xoa duoc
         $qr = "DELETE FROM task WHERE id='$id'";
         mysqli_query($this->conn, $qr);
+        // ko co row/task nao bi delete thi bao loi
+        if (mysqli_affected_rows($this->conn) === 0) {
+            throw new Exception('Cannot delete');
+        }
     }
 
     // Edit Task - Get Content
