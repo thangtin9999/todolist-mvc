@@ -18,7 +18,7 @@
 // Hiện tại e phải redirect lại. E muốn nó trả về view ngay luôn chứ không load
 $("button#delete").click(function () {
   var id_del = $(this).val();
-  _this = $("#div-task-"+id_del+"");
+  _this = $("#div-task-" + id_del + "");
   $.post("./task/delete", { id: id_del }, function (data) {
     //$("#result").html(data);
     // neu delete thanh cong => remove row tren view la du
@@ -39,7 +39,8 @@ $("button#edit").click(function () {
     //$("#test").html(data);
   });
 });
-//
+
+//Save-task(Edit feature)
 $("button#save_task").click(function () {
   var id_save = $(this).val();
   var content_save = $("#content_edit").val();
@@ -50,4 +51,18 @@ $("button#save_task").click(function () {
       window.location = "./";
     }
   );
+});
+
+// Task-complete
+$("input.custom-control-input").click(function () {
+  var get_id = $(this).attr("id").trim();
+  var id = get_id.substring(11, 14);
+  _this = $(this);
+  $.post("./task/task_complete", { id: id }, function () {
+    // $("#text" + id).css("text-decoration", "line-through");
+    _this
+      .parent("div")
+      .find("span.label-text")
+      .css("text-decoration", "line-through");
+  });
 });

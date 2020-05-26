@@ -6,11 +6,6 @@ class task extends controller
     {
         $this->task = $this->model("taskmodel");
     }
-    function sayhi()
-    {
-        $teo = $this->model("taskmodel");
-        echo $teo->gettask();
-    }
     function create()
     {
         //Get Data
@@ -68,5 +63,10 @@ class task extends controller
         // neu delete thanh cong thi server chi return: success/http code 200
         // neu delete KO thanh cong thi server return: fail/http code 404
 
+    }
+    function task_complete()
+    {
+        $id = $_POST['id'];
+        $this->task->task_complete($id);
     }
 }

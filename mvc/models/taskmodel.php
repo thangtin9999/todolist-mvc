@@ -3,7 +3,7 @@ class taskmodel extends db
 {
     public function show_task()
     {
-        $qr = "SELECT * FROM task ORDER BY createdate desc";
+        $qr = "SELECT * FROM task ORDER BY status desc, create_date desc";
         $rows = mysqli_query($this->conn, $qr);
         // return $rows;
         $arr = array();
@@ -14,7 +14,7 @@ class taskmodel extends db
     }
     public function add_task($content)
     {
-        $qr = "INSERT INTO task(content,status,createdate) VALUE('$content',1,now())";
+        $qr = "INSERT INTO task(content,status,create_date) VALUE('$content',1,now())";
         $result = false;
         if (mysqli_query($this->conn, $qr)) {
             $result = true;
@@ -48,7 +48,7 @@ class taskmodel extends db
 
     public function update($id, $content)
     {
-        $qr = "UPDATE task SET content='$content', updatedate=now() WHERE id=$id";
+        $qr = "UPDATE task SET content='$content', update_date=now() WHERE id=$id";
         mysqli_query($this->conn, $qr);
     }
 
@@ -62,5 +62,13 @@ class taskmodel extends db
             $result = true;
         }
         return json_encode($result);
+    }
+
+    // Task Complete
+
+    public function task_complete($id)
+    {
+        $qr = "UPDATE task SET status='0', complete_date=now() WHERE id=$id";
+        mysqli_query($this->conn, $qr);
     }
 }
