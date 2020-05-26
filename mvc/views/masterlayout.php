@@ -72,6 +72,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="./public/js/jquery.min.js"></script> -->
     <script src="./public/js/popper.js"></script>
     <script src="./public/js/bootstrap.min.js"></script>
     <script src="./public/js/main.js"></script>
