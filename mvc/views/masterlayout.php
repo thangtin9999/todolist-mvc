@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <base href="http://localhost/todo/">
     <title>Todolist-MVC</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,16 +23,16 @@
             <h4><a href="#" id="sidebarCollapse" class="logo">TODO</a></h4>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
-                    <a href="#"><span class="fa fa-tasks"></span> My task</a>
+                    <a href="./category/mytask"><span class=" fa fa-tasks"></span> My task</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-check-square-o"></span> Complete</a>
+                    <a href="./category/complete"><span class="fa fa-check-square-o"></span> Complete</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-trash"></span> Trash</a>
+                    <a href="./category/trash"><span class="fa fa-trash"></span> Trash</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-user"></span> About</a>
+                    <a href="./category/about"><span class="fa fa-user"></span> About</a>
                 </li>
 
             </ul>

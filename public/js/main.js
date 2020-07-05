@@ -66,3 +66,7 @@ $("input.custom-control-input").click(function () {
       .css("text-decoration", "line-through");
   });
 });
+
+$("#cat-1").click(function () {
+  $("#result").load("./category/mytask");
+});
